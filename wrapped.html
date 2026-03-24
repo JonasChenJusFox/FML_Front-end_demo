@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYBites — Wrapped</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="wrapped">
+  <div class="shell">
+    <!-- Global site header -->
+    <header class="topbar glass">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div>
+          <h1>NYBites</h1>
+          <p>Your dining recap</p>
+        </div>
+      </div>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="discover.html">Discover</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <a class="nav-link active" href="wrapped.html">Wrapped</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </header>
+
+    <!-- Mobile navigation panel -->
+    <div class="mobile-menu glass" id="mobileMenu">
+      <a class="mobile-link" href="index.html">Home</a>
+      <a class="mobile-link" href="discover.html">Discover</a>
+      <a class="mobile-link" href="profile.html">Profile</a>
+      <a class="mobile-link active" href="wrapped.html">Wrapped</a>
+    </div>
+
+    <!-- Wrapped intro -->
+    <section class="hero-grid top-space-md">
+      <div class="hero-card glass">
+        <div>
+          <div class="eyebrow">Recap</div>
+          <h2 class="hero-title">Review History</h2>
+          <p class="subcopy">These cards are driven by your local visit history, which makes it easy to demo how a more personal recap layer could feel inside the product.</p>
+        </div>
+        <div class="button-row top-space-sm">
+          <a class="primary-btn" href="discover.html">Add more activity</a>
+          <a class="ghost-btn" href="profile.html">Open profile</a>
+        </div>
+      </div>
+
+      <aside class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>How to use this page</h3>
+            <p>Seed demo data or mark a few visits in Discover to populate the recap cards.</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h4>Patterns</h4>
+            <p>Spot the cuisines, price levels, and neighborhoods you return to most often.</p>
+          </article>
+          <article class="timeline-item">
+            <h4>Moments</h4>
+            <p>See the vibe that best describes your recent dining rhythm.</p>
+          </article>
+          <article class="timeline-item">
+            <h4>Variety</h4>
+            <p>Measure how broad your recent exploration has been across cuisines.</p>
+          </article>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Wrapped cards -->
+    <section class="panel glass top-space-lg">
+      <div class="section-title">
+        <div>
+          <h2>Wrapped cards</h2>
+          <p>Generated from your current local history.</p>
+        </div>
+      </div>
+      <div class="grid-3" id="wrappedGrid"></div>
+    </section>
+
+    <p class="footer-note">NYBites · <span data-year></span></p>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

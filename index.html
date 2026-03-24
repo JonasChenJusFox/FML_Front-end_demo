@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYBites — Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="home">
+  <div class="shell">
+    <!-- Global site header -->
+    <header class="topbar glass">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div>
+          <h1>NYBites</h1>
+          <p>NYC restaurant discovery</p>
+        </div>
+      </div>
+
+      <!-- Desktop navigation -->
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="discover.html">Discover</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <a class="nav-link" href="wrapped.html">Wrapped</a>
+      </nav>
+
+      <!-- Mobile navigation trigger -->
+      <button
+        class="hamburger"
+        id="hamburgerBtn"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </header>
+
+    <!-- Mobile navigation panel -->
+    <div class="mobile-menu glass" id="mobileMenu">
+      <a class="mobile-link active" href="index.html">Home</a>
+      <a class="mobile-link" href="discover.html">Discover</a>
+      <a class="mobile-link" href="profile.html">Profile</a>
+      <a class="mobile-link" href="wrapped.html">Wrapped</a>
+    </div>
+
+    <!-- Hero and overview -->
+    <section class="hero-grid top-space-md">
+      <!-- Main hero -->
+      <div class="hero-card glass">
+        <div>
+          <div class="eyebrow">Today's dashboard</div>
+          <h2 class="hero-title">NYC Restaurants Discovery</h2>
+          <p class="subcopy">
+            Use the dashboard to understand what you save most, where you tend to eat,
+            and which spots are busy at different times of day before jumping into discovery.
+          </p>
+        </div>
+
+        <div class="metrics">
+          <article class="stat-card">
+            <strong id="metricSaved">0</strong>
+            <span>saved places</span>
+          </article>
+          <article class="stat-card">
+            <strong id="metricVisited">0</strong>
+            <span>visited places</span>
+          </article>
+          <article class="stat-card">
+            <strong id="metricAverageRating">0.0</strong>
+            <span>average restaurant rating</span>
+          </article>
+        </div>
+
+        <div class="chip-row" id="homeProfileTags"></div>
+
+        <div class="button-row top-space-sm">
+          <a class="primary-btn" href="discover.html">Start exploring</a>
+          <button class="ghost-btn" data-seed-demo="true">Seed demo data</button>
+          <button class="ghost-btn" data-reset-demo="true">Reset local data</button>
+        </div>
+      </div>
+
+      <!-- Quick overview -->
+      <aside class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>Quick overview</h3>
+            <p>
+              Jump into the part of the product that matches the next question you want to answer.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <h4>Discover</h4>
+            <p>Search by cuisine, price, dietary needs, distance, and vibe.</p>
+          </article>
+
+          <article class="timeline-item">
+            <h4>Profile</h4>
+            <p>Adjust preferences, review saved restaurants, and inspect visit history.</p>
+          </article>
+
+          <article class="timeline-item">
+            <h4>Wrapped</h4>
+            <p>See recap cards based on your local interaction history.</p>
+          </article>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Starter feed and cuisine breakdown -->
+    <section class="grid-2 top-space-lg">
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>Starter feed</h3>
+            <p>Suggestions that react to your current preferences and local history.</p>
+          </div>
+          <a class="ghost-btn" href="discover.html">Open Discover</a>
+        </div>
+
+        <div class="starter-grid" id="starterFeed"></div>
+      </section>
+
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>Saved cuisines</h3>
+            <p>A quick view of which cuisines show up most often in your current shortlist.</p>
+          </div>
+        </div>
+
+        <div id="favoritesByCuisine"></div>
+      </section>
+    </section>
+
+    <!-- Traffic chart and explanation -->
+    <section class="grid-2 top-space-lg">
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>Traffic by time</h3>
+          </div>
+          <div>
+            <select id="trafficRestaurantSelect" class="select-input">
+              <option value="saffronQuiet">Saffron Quiet</option>
+              <option value="studioSips">Studio Sips Café</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="trafficMeta" class="muted"></p>
+        <div class="traffic-chart" id="trafficChart"></div>
+        <div class="insight-row" id="topMoments"></div>
+      </section>
+
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>What this page tells you</h3>
+            <p>
+              Use the dashboard to frame discovery before diving into individual restaurant cards.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <h4>Your current taste profile</h4>
+            <p>
+              Tags near the top summarize the cuisines, vibes, and radius influencing the feed.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h4>Collection patterns</h4>
+            <p>
+              The cuisine chart highlights how your saved list is distributed right now.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h4>Time awareness</h4>
+            <p>
+              The traffic chart helps explain why one place may fit lunch, dinner,
+              or late-night plans better than another.
+            </p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <p class="footer-note">NYBites · <span data-year></span></p>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

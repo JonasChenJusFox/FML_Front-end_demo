@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYBites— Profile</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="profile">
+  <div class="shell">
+    <!-- Global site header -->
+    <header class="topbar glass">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div>
+          <h1>NYBites</h1>
+          <p>Your taste profile</p>
+        </div>
+      </div>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="discover.html">Discover</a>
+        <a class="nav-link active" href="profile.html">Profile</a>
+        <a class="nav-link" href="wrapped.html">Wrapped</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </header>
+
+    <!-- Mobile navigation panel -->
+    <div class="mobile-menu glass" id="mobileMenu">
+      <a class="mobile-link" href="index.html">Home</a>
+      <a class="mobile-link" href="discover.html">Discover</a>
+      <a class="mobile-link active" href="profile.html">Profile</a>
+      <a class="mobile-link" href="wrapped.html">Wrapped</a>
+    </div>
+
+    <!-- Profile summary -->
+    <section class="grid-2 top-space-md">
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h2>Current profile</h2>
+            <p>Your saved preferences shape ranking, starter feed, and recap cards.</p>
+          </div>
+          <div class="button-row">
+            <button class="primary-btn" id="openProfileEditorBtn">Edit preferences</button>
+            <button class="ghost-btn" data-seed-demo="true">Seed demo</button>
+            <button class="ghost-btn" data-reset-demo="true">Reset</button>
+          </div>
+        </div>
+        <div id="profileTags" class="profile-tags"></div>
+      </section>
+
+      <!-- Profile snapshot -->
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h2>How your profile is used</h2>
+            <p>These signals shape the order of recommendations across the site.</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <h4>Cuisines and vibes</h4>
+            <p>Your top cuisines and mood tags influence both starter feeds and ranked results.</p>
+          </article>
+          <article class="timeline-item">
+            <h4>Price and travel radius</h4>
+            <p>Budget comfort and travel distance help keep recommendations realistic for the moment.</p>
+          </article>
+          <article class="timeline-item">
+            <h4>Dietary preferences</h4>
+            <p>Saved dietary settings are carried into discovery so relevant options surface earlier.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- Saved restaurants and visit history -->
+    <section class="grid-2 top-space-lg">
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>Saved restaurants</h3>
+            <p>Your shortlist is a fast way to revisit strong matches later.</p>
+          </div>
+        </div>
+        <div class="list-stack" id="savedList"></div>
+      </section>
+
+      <section class="panel glass">
+        <div class="section-title">
+          <div>
+            <h3>Visit history</h3>
+            <p>Recent interactions make the recommendation layer feel more personal over time.</p>
+          </div>
+        </div>
+        <div class="list-stack" id="historyList"></div>
+      </section>
+    </section>
+
+    <p class="footer-note">NYBites · <span data-year></span></p>
+  </div>
+
+  <!-- Floating preference editor -->
+  <div class="modal-backdrop" id="profileEditorModal" aria-hidden="true">
+    <section class="modal-card glass" aria-labelledby="profileEditorTitle" role="dialog" aria-modal="true">
+      <div class="section-title">
+        <div>
+          <h2 id="profileEditorTitle">Edit preferences</h2>
+          <p>Update your taste profile here and refresh your recommendations instantly.</p>
+        </div>
+        <button class="ghost-btn" id="closeProfileEditorBtn" aria-label="Close editor">Close</button>
+      </div>
+
+      <!-- Preference editor controls -->
+      <div class="editor-grid">
+        <div>
+          <label class="title">Favorite cuisines (up to 3)</label>
+          <div class="onboard-tags" id="profileCuisineOptions"></div>
+        </div>
+        <div>
+          <label class="title">Vibe preferences</label>
+          <div class="onboard-tags" id="profileVibeOptions"></div>
+        </div>
+        <div>
+          <label class="title" for="profilePrice">Price comfort level</label>
+          <select class="select" id="profilePrice">
+            <option value="1">Mostly $</option>
+            <option value="2">Comfortable with $$</option>
+            <option value="3">Comfortable with $$$</option>
+            <option value="4">Open to $$$$</option>
+          </select>
+        </div>
+        <div>
+          <label class="title" for="profileRadius">Preferred travel radius</label>
+          <select class="select" id="profileRadius">
+            <option value="10">10 minutes</option>
+            <option value="20">20 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-group top-space-sm">
+        <label class="title">Dietary preferences</label>
+        <div class="checkbox-grid" id="profileDietOptions"></div>
+      </div>
+
+      <div class="button-row">
+        <button class="primary-btn" id="saveProfileBtn">Save changes</button>
+        <button class="ghost-btn" id="sampleProfileBtn">Use sample profile</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
